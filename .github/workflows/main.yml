@@ -20,7 +20,7 @@ jobs:
       - name: Setup SSH Key
         uses: kielabokkie/ssh-key-and-known-hosts-action@v1
         with:
-          ssh-private-key: ${{ secrets.SERVER_SSH_KEY }}
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
           ssh-host: ${{ secrets.APP_HOST }}
       
       - name: Deploy
