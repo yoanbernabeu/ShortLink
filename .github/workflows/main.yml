@@ -17,12 +17,10 @@ jobs:
       - name: checkout
         uses: actions/checkout@v1
         
-      - name: Setup SSH Key
-        uses: kielabokkie/ssh-key-and-known-hosts-action@v1
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-          ssh-host: ${{ secrets.APP_HOST }}
-      
+      - uses: webfactory/ssh-agent@v0.5.3
+              with:
+                  ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+                  
       - name: Deploy
         run:
           ssh ${{ secrets.APP_HOST }}
