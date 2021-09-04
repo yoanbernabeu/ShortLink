@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  APP_DIR: "/home/github/test/test1"
+  APP_DIR: ${{ secrets.APP_DIR }}
 
 jobs:
   build:
