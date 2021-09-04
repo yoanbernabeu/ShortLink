@@ -17,11 +17,11 @@ jobs:
       - name: checkout
         uses: actions/checkout@v1
         
-      - name: SSH Setup
-        uses: MrSquaare/ssh-setup-action@v1.0.1
+      - name: Setup SSH Key
+        uses: kielabokkie/ssh-key-and-known-hosts-action@v1
         with:
-          host: ${{ secrets.APP_HOST }}
-          private-key: ${{ secrets.SERVER_SSH_KEY }}
+          ssh-private-key: ${{ SERVER_SSH_KEY }}
+          ssh-host: ${{ APP_HOST }}
       
       - name: Deploy
         run:
