@@ -1,0 +1,29 @@
+name: ssh-pipeline
+
+on:
+  push:
+    branches:
+      - master
+
+env:
+  APP_DIR: "/home/github/test/test1"
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v1
+        
+      - name: SSH Setup
+        uses: MrSquaare/ssh-setup-action@v1.0.1
+        with:
+          host: ${{ secrets.APP_HOST }}
+          private-key: ${{ secrets.SERVER_SSH_KEY }}
+      
+      - name: Deploy
+        run:
+          ssh ${{ secrets.APP_HOST }}
+          pwd
