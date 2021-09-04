@@ -25,6 +25,7 @@ jobs:
           cat >>~/.ssh/config <<END
           Host deploy
             HostName $SSH_HOST
+            User $SSH_USER
             IdentityFile ~/.ssh/deploy.key
             StrictHostKeyChecking no
           END
