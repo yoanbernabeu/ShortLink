@@ -21,7 +21,7 @@ jobs:
         uses: kielabokkie/ssh-key-and-known-hosts-action@v1
         with:
           ssh-private-key: ${{ secrets.SERVER_SSH_KEY }}
-          ssh-host: ${{ APP_HOST }}
+          ssh-host: ${{ secrets.APP_HOST }}
       
       - name: Deploy
         run:
