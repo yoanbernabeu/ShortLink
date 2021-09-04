@@ -3,7 +3,7 @@ name: ssh-pipeline
 on:
   push:
     branches:
-      - master
+      - main
 
 env:
   APP_DIR: "/home/github/test/test1"
