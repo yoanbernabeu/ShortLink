@@ -1,0 +1,31 @@
+<header class="masthead">
+	<div class="container px-5">
+		<div
+			class="row gx-5 align-items-center">
+			<!-- Mashead text and app badges-->
+			<div class="col-lg-6 col-md-6 col-sm-12 col-12">
+				<div class="mb-5 mb-lg-0 text-center text-lg-start">
+					<h1 class="display-1 lh-1 mb-3">Votre lien.</h1>
+
+					<div class="input-group mb-3">
+						<input id="input" type="text" class="form-control" value="{{ absolute_url(path('link', {'short': message.short})) }}" readonly="true">
+						<button class="btn btn-outline-primary" id="copy"><i class="bi bi-clipboard"></i></button>
+					</div>
+					<p class="fw-normal text-muted mb-5">Lien d'origine :
+						<a href="{{ message.link }}">{{ message.link }}</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<script>
+function copy() {
+  var copyText = document.querySelector("#input");
+  copyText.select();
+  document.execCommand("copy");
+}
+
+document.querySelector("#copy").addEventListener("click", copy);
+</script>

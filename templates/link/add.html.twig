@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Add Link
+{% endblock %}
+
+{% block body %}
+    {% set intro = true %}
+	{% for message in app.flashes('success') %}
+        {% set intro = false %}
+		{% include '_base/_show.html.twig' %}
+	{% endfor %}
+
+	{% if intro == true %}
+		{% include '_base/_header.html.twig' %}
+	{% endif %}
+		{% include '_base/_quote.html.twig' %}
+		{% include '_base/_basic.html.twig' %}
+        {% include '_base/_count.html.twig' %}
+	
+{% endblock %}
