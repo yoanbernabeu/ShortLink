@@ -12,5 +12,5 @@ jobs:
       
       - name: Run sshpass commands
         run: 
-          apt install sshpass
+          sudo apt install sshpass
           pwd
