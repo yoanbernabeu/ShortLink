@@ -20,4 +20,5 @@ jobs:
       - name: test pwd
         run: 
           sshpass -e ssh -o stricthostkeychecking=no ${{ secrets.APP_USER }}@${{ secrets.APP_HOST }}
-          'pwd'
+          "cd public_html/ &&
+          pwd"
