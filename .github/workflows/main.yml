@@ -10,7 +10,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-      - name: Run sshpass commands
+      - name: APT UPDATE and INSTALL SSHPASS
         run: 
           sudo apt update && sudo apt install sshpass
+          
+      - name: test pwd
+        run: 
           pwd
