@@ -20,4 +20,4 @@ jobs:
       - name: test pwd
         run: 
           sshpass -e ssh -o stricthostkeychecking=no ${{ secrets.APP_USER }}@${{ secrets.APP_HOST }}
-          'cd ${{ secrets.APP_DIR }} && pwd'
+          'pwd'
