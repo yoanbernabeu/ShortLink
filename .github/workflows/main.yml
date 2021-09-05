@@ -1,5 +1,4 @@
-name: CD - Déploiement
-
+name: CD
 on:
   push:
     branches: [ main ]
@@ -18,4 +17,4 @@ jobs:
           user: ${{ secrets.APP_USER }}
           pass: ${{ secrets.APP_PASS }}
           run: |
-            echo "Hello World !"
+            pwd
