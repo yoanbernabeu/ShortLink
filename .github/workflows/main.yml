@@ -16,6 +16,6 @@ jobs:
         with:
           host: ${{ secrets.APP_HOST }}
           user: ${{ secrets.APP_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          pass: ${{ secrets.APP_PASS }}
           run: |
             echo "Hello World !"
