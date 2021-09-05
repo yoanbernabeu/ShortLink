@@ -11,10 +11,6 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: Run sshpass commands
-        uses: matheusvanzan/sshpass-action@v2
-        with:
-          host: ${{ secrets.APP_HOST }}
-          user: ${{ secrets.APP_USER }}
-          pass: ${{ secrets.APP_PASS }}
-          run: |
-            pwd
+        run: 
+          apt install sshpass
+          pwd
