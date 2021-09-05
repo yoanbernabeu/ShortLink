@@ -21,5 +21,6 @@ jobs:
         run: 
           sshpass -e ssh -o stricthostkeychecking=no ${{ secrets.APP_USER }}@${{ secrets.APP_HOST }}
           "cd public_html/ &&
+          git pull &&
           composer install &&
           php bin/console d:m:m -n"
