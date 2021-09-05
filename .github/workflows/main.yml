@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     
     env:
-      SSHPASS: ${{ seccrets.APP_PASS }}
+      SSHPASS: ${{ secrets.APP_PASS }}
 
     steps:
       - uses: actions/checkout@v2
@@ -19,4 +19,4 @@ jobs:
           
       - name: test pwd
         run: 
-          sshpass -e ssh -o stricthostkeychecking=no ${{ seccrets.APP_USER }}@${{ seccrets.APP_HOST }} 'pwd'
+          sshpass -e ssh -o stricthostkeychecking=no ${{ secrets.APP_USER }}@${{ secrets.APP_HOST }} 'pwd'
