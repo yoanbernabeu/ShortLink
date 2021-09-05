@@ -6,6 +6,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    
+    env:
+      SSHPASS: ${{ seccrets.APP_PASS }}
 
     steps:
       - uses: actions/checkout@v2
@@ -16,4 +19,4 @@ jobs:
           
       - name: test pwd
         run: 
-          pwd
+          sshpass -e ssh -o stricthostkeychecking=no ${{ seccrets.APP_USER }}@${{ seccrets.APP_HOST }} 'pwd'
